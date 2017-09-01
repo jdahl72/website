@@ -21,4 +21,4 @@ Cubs | National
 Red Sox | American
 Phillies | National
 
-<img src="Derek Jeter.jpg" width ="300" />
+<img src="DerekJeter.jpg" width ="300" />

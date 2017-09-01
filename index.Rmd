@@ -3,9 +3,9 @@ title: "SQL"
 output: html_document
 ---
 
-# This is a first-level header
-## This is a second-level header
-### This is a third-level header
+# Yankees are the best
+## Red Sox are the worst
+### I go to Mercyhurst
 
 For a paragraph, just type normally.
 

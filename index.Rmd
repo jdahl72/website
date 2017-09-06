@@ -3,22 +3,20 @@ title: "SQL"
 output: html_document
 ---
 
-# Yankees are the best
-## Red Sox are the worst
-### I go to Mercyhurst
+## Filtering Rows and Columns
 
-In case it is not evident, I am a Yankees fan.
+With SQL, you can filter columns with SELECT and rows with WHERE. Let's look at an example using the Lahman baseball database.First we need to load some packages. 
 
-* Aaron Judge
-* Gary Sanchez
-* Starlin Castro
-* Masahiro Tanaka
+```{r warning=FALSE,message=FALSE}
+library(Lahman)
+library(sqldf)
+```
 
-Team | League
----|---
-Yankees | American
-Cubs | National
-Red Sox | American
-Phillies | National
+Suppose we want to see the homerun totals for the 1927 Yankees. We could write the following:
 
-<img src="DerekJeter.jpg" width ="300" />
+```{r}
+query<-"SELECT playerID,yearID,teamID,HR FROM Batting
+WHERE teamID='NYA'and yearID=1927"
+sqldf(query)
+```
+

@@ -58,9 +58,7 @@ ORDER BY HR DESC"
 sqldf(query)
 ```
 
-##-------------------------------------------------------------------------------------------
-
-In this chart we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.
+In this chart, we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.
 
 ```{r}
 query<-"SELECT playerID,yearID,teamID,SO,AB FROM Batting
@@ -70,7 +68,3 @@ sqldf(query)
 ```
 
 ##-------------------------------------------------------------------------------------------
-
-
-
-

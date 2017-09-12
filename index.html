@@ -260,10 +260,7 @@ sqldf(query)</code></pre>
 ## 34  mayswi01   1955    NY1 51
 ## 35 fieldce01   1990    DET 51
 ## 36 jonesan01   2005    ATL 51</code></pre>
-</div>
-<div id="section-1" class="section level2">
-<h2>——————————————————————————————-</h2>
-<p>In this chart we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.</p>
+<p>In this chart, we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,yearID,teamID,SO,AB FROM Batting
 WHERE SO&lt;10 and AB&gt;=400
 ORDER BY SO&quot;
@@ -335,7 +332,7 @@ sqldf(query)</code></pre>
 ## 64 boudrlo01   1948    CLE  9 560
 ## 65 mitchda01   1952    CLE  9 511</code></pre>
 </div>
-<div id="section-2" class="section level2">
+<div id="section-1" class="section level2">
 <h2>——————————————————————————————-</h2>
 </div>
 

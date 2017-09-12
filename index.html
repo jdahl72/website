@@ -155,6 +155,10 @@ sqldf(query)</code></pre>
 ## 23 shockur01   1927    NYA  0
 ## 24 thomamy01   1927    NYA  0
 ## 25  weraju01   1927    NYA  1</code></pre>
+</div>
+<div id="section" class="section level2">
+<h2>——————————————————————————————-</h2>
+<p>In this scenario, we can filter our selection to players from the New York Yankees who have had seasons of 40 or more home runs while striking out less than 60 times, which is quite a feat.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,teamID,yearID,HR FROM Batting
 WHERE teamID='NYA' and HR&gt;=40 and SO&lt;60&quot;
 sqldf(query)</code></pre>
@@ -164,6 +168,10 @@ sqldf(query)</code></pre>
 ## 3 gehrilo01    NYA   1934 49
 ## 4 gehrilo01    NYA   1936 49
 ## 5 dimagjo01    NYA   1937 46</code></pre>
+</div>
+<div id="section-1" class="section level2">
+<h2>——————————————————————————————-</h2>
+<p>If we want to broaden the search, we can select players from any team who had more than 40 home runs and less than 60 strikeouts.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,teamID,yearID,HR,SO FROM Batting
 WHERE HR&gt;40 and SO&lt;60&quot;
 sqldf(query)</code></pre>
@@ -196,6 +204,10 @@ sqldf(query)</code></pre>
 ## 26 bondsba01    SFN   2004 45 41
 ## 27 pujolal01    SLN   2004 46 52
 ## 28 pujolal01    SLN   2006 49 50</code></pre>
+</div>
+<div id="section-2" class="section level2">
+<h2>——————————————————————————————-</h2>
+<p>As you can see with the data below, we can even narrow it down to Philadelphia Phillies in the 1970s who had more than 30 home runs in a season.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,teamID,yearID,HR FROM Batting
 WHERE teamID='PHI' and HR&gt;30 and yearID&lt;=1979 and yearID&gt;=1970&quot;
 sqldf(query)</code></pre>
@@ -209,6 +221,10 @@ sqldf(query)</code></pre>
 ## 7 schmimi01    PHI   1977 38
 ## 8 luzingr01    PHI   1978 35
 ## 9 schmimi01    PHI   1979 45</code></pre>
+</div>
+<div id="section-3" class="section level2">
+<h2>——————————————————————————————-</h2>
+<p>This chart displays how you can order your data in ascending or descending order. Here we can see players who have had seasons with more than 50 home runs ordering from the greatest number of home runs to the least.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID, yearID, teamID,HR FROM Batting
 WHERE HR&gt;50
 ORDER BY HR DESC&quot;
@@ -250,6 +266,10 @@ sqldf(query)</code></pre>
 ## 34  mayswi01   1955    NY1 51
 ## 35 fieldce01   1990    DET 51
 ## 36 jonesan01   2005    ATL 51</code></pre>
+</div>
+<div id="section-4" class="section level2">
+<h2>——————————————————————————————-</h2>
+<p>In this chart we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,yearID,teamID,SO,AB FROM Batting
 WHERE SO&lt;10 and AB&gt;=400
 ORDER BY SO&quot;
@@ -320,6 +340,9 @@ sqldf(query)</code></pre>
 ## 63 holmeto01   1945    BSN  9 636
 ## 64 boudrlo01   1948    CLE  9 560
 ## 65 mitchda01   1952    CLE  9 511</code></pre>
+</div>
+<div id="section-5" class="section level2">
+<h2>——————————————————————————————-</h2>
 </div>
 
 

@@ -19,13 +19,19 @@ query<-"SELECT playerID,yearID,teamID,HR FROM Batting
 WHERE teamID='NYA'and yearID=1927"
 sqldf(query)
 ```
+##-------------------------------------------------------------------------------------------
 
+In this scenario, we can filter our selection to players from the New York Yankees who have had seasons of 40 or more home runs while striking out less than 60 times, which is quite a feat.
 
 ```{r}
 query<-"SELECT playerID,teamID,yearID,HR FROM Batting
 WHERE teamID='NYA' and HR>=40 and SO<60"
 sqldf(query)
 ```
+
+##-------------------------------------------------------------------------------------------
+
+If we want to broaden the search, we can select players from any team who had more than 40 home runs and less than 60 strikeouts.
 
 ```{r}
 query<-"SELECT playerID,teamID,yearID,HR,SO FROM Batting
@@ -34,11 +40,19 @@ sqldf(query)
 
 ```
 
+##-------------------------------------------------------------------------------------------
+
+As you can see with the data below, we can even narrow it down to  Philadelphia Phillies in the 1970s who had more than 30 home runs in a season.
+
 ```{r}
 query<-"SELECT playerID,teamID,yearID,HR FROM Batting
 WHERE teamID='PHI' and HR>30 and yearID<=1979 and yearID>=1970"
 sqldf(query)
 ```
+
+##-------------------------------------------------------------------------------------------
+
+This chart displays how you can order your data in ascending or descending order. Here we can see players who have had seasons with more than 50 home runs ordering from the greatest number of home runs to the least. 
 
 ```{r}
 query<-"SELECT playerID, yearID, teamID,HR FROM Batting
@@ -47,6 +61,10 @@ ORDER BY HR DESC"
 sqldf(query)
 ```
 
+##-------------------------------------------------------------------------------------------
+
+In this chart we look at seasons where a player had less than 10 strikeouts in at least 400 at-bats, which is also an incredible and practically unheard of feat in the modern-era. Notice they are ordered in ascending order from players with the least number of strikeouts in a season.
+
 ```{r}
 query<-"SELECT playerID,yearID,teamID,SO,AB FROM Batting
 WHERE SO<10 and AB>=400
@@ -54,6 +72,7 @@ ORDER BY SO"
 sqldf(query)
 ```
 
+##-------------------------------------------------------------------------------------------
 
 
 

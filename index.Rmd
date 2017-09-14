@@ -68,3 +68,35 @@ sqldf(query)
 ```
 
 ##-------------------------------------------------------------------------------------------
+
+##Aggregation
+
+With aggregation, we can now find the sum, avg., min., or max of columns in a dataset. In this example, we can find the sum of Babe Ruth's career home runs (714) which was for decades an MLB record. 
+
+```{r}
+query<-"SELECT playerID, sum(HR) FROM Batting
+WHERE playerID= 'ruthba01'
+GROUP BY playerID"
+sqldf(query)
+```
+
+In this chart, you can see we calculated the sum of career home runs of players who hit over 600 and ordered them from the highest to lowest. 
+
+```{r}
+query<-"SELECT playerID, sum(HR) From Batting
+GROUP BY playerID
+HAVING sum(HR)>600
+ORDER BY sum(HR) DESC"
+sqldf(query)
+```
+
+Here you can see all the players who averaged more than 30 home runs throughout their career ordered from highest average to the lowest.
+
+```{r}
+query<-"SELECT playerID, avg(HR) From Batting
+GROUP BY playerID
+HAVING avg(HR)>30
+ORDER BY avg(HR) DESC"
+sqldf(query)
+```
+

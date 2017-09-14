@@ -385,6 +385,7 @@ sqldf(query)</code></pre>
 </div>
 <div id="joins" class="section level2">
 <h2>Joins</h2>
+<p>The joining of tables allows us to combine data from other tables. In this example, we combined the Batting table with the Master table so we could include the full from the player we wanted (in this case Babe Ruth).</p>
 <pre class="r"><code>query&lt;-&quot;SELECT nameFirst,nameLast,yearID,teamID,HR 
 FROM Batting INNER JOIN Master
 ON BATTING.playerID=Master.playerID
@@ -413,6 +414,7 @@ sqldf(query)</code></pre>
 ## 20      Babe     Ruth   1933    NYA 34
 ## 21      Babe     Ruth   1934    NYA 22
 ## 22      Babe     Ruth   1935    BSN  6</code></pre>
+<p>With this chart, we were able to combine tables to figure out the full names of players who had seasons of more than 50 home runs in descending order.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT nameFirst,nameLast,yearID,teamID,HR
 FROM Batting INNER JOIN Master
 ON BATTING.playerID=Master.playerID
@@ -456,6 +458,7 @@ sqldf(query)</code></pre>
 ## 34    Willie      Mays   1955    NY1 51
 ## 35     Cecil   Fielder   1990    DET 51
 ## 36    Andruw     Jones   2005    ATL 51</code></pre>
+<p>Here we were able to join the Batting and Teams tables to identify the full team names of the teams that Babe Ruth played for in each of his 22 seasons.</p>
 <pre class="r"><code>query&lt;-&quot;SELECT playerID,name,Batting.yearID,Batting.HR
 FROM Batting INNER JOIN Teams
 ON Batting.teamID=Teams.teamID AND Batting.yearID=Teams.yearID

@@ -104,6 +104,8 @@ sqldf(query)
 
 ##Joins
 
+The joining of tables allows us to combine data from other tables. In this example, we combined the Batting table with the Master table so we could include the full from the player we wanted (in this case Babe Ruth).
+
 ```{r}
 query<-"SELECT nameFirst,nameLast,yearID,teamID,HR 
 FROM Batting INNER JOIN Master
@@ -111,6 +113,8 @@ ON BATTING.playerID=Master.playerID
 WHERE Batting.playerID= 'ruthba01'"
 sqldf(query)
 ```
+
+With this chart, we were able to combine tables to figure out the full names of players who had seasons of more than 50 home runs in descending order.
 
 ```{r}
 query<-"SELECT nameFirst,nameLast,yearID,teamID,HR
@@ -120,6 +124,8 @@ WHERE Batting.HR>50
 ORDER BY HR DESC"
 sqldf(query)
 ```
+
+Here we were able to join the Batting and Teams tables to identify the full team names of the teams that Babe Ruth played for in each of his 22 seasons.
 
 ```{r}
 query<-"SELECT playerID,name,Batting.yearID,Batting.HR

@@ -100,3 +100,32 @@ ORDER BY avg(HR) DESC"
 sqldf(query)
 ```
 
+##-------------------------------------------------------------------------------------------
+
+##Joins
+
+```{r}
+query<-"SELECT nameFirst,nameLast,yearID,teamID,HR 
+FROM Batting INNER JOIN Master
+ON BATTING.playerID=Master.playerID
+WHERE Batting.playerID= 'ruthba01'"
+sqldf(query)
+```
+
+```{r}
+query<-"SELECT nameFirst,nameLast,yearID,teamID,HR
+FROM Batting INNER JOIN Master
+ON BATTING.playerID=Master.playerID
+WHERE Batting.HR>50
+ORDER BY HR DESC"
+sqldf(query)
+```
+
+```{r}
+query<-"SELECT playerID,name,Batting.yearID,Batting.HR
+FROM Batting INNER JOIN Teams
+ON Batting.teamID=Teams.teamID AND Batting.yearID=Teams.yearID
+WHERE playerID='ruthba01'"
+sqldf(query)
+```
+
